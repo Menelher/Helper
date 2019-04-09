@@ -1,0 +1,57 @@
+﻿<Page x:Class="ProjectHelper.ProjectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectHelper"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="400"
+      Title="ProjectPage"
+      KeyDown="Page_KeyDown">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Header"
+              Style="{StaticResource HeaderGrid}">
+            <TextBox x:Name="ProjectNameLabel" 
+               Text="ProjectName"                
+               Style="{StaticResource HeaderTextBox}"
+               Grid.Row="0"
+               FontSize="50"
+                     ToolTip="Dvojítím kliknutím přejmenujete projekt"
+                     Cursor="Hand"
+                     TextWrapping="Wrap"
+               KeyDown="ProjectNameLabel_KeyDown"
+               MouseDoubleClick="ProjectNameLabel_MouseDoubleClick"
+            />
+            <Button x:Name="BackButton"
+                    Width="25"
+                    Height="25"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="10,10,0,0"
+                    ToolTip="Zpět"
+                    IsCancel="True"
+                    Click="BackButton_Click"
+            >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="UI\Buttons\DockPanel (25x25)\backButton.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <TabControl x:Name="ProjectTabControl"
+                    Grid.Row="1"
+                    SelectionChanged="ProjectTabControl_SelectionChanged">
+            <TabItem Header="HomePage"
+                     x:Name="HomePage" Height="25">
+                <Frame x:Name="ProjectFrame"
+                       NavigationUIVisibility="Hidden"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

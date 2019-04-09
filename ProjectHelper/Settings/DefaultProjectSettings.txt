@@ -1,0 +1,5 @@
+﻿TimerOn=True
+TimerVisibility=True
+SubfoldersExpanded=True
+ProjectColor=#FF2F6DAC
+ToolbarVisibility=True

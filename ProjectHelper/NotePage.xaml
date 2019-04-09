@@ -1,0 +1,105 @@
+﻿<Page x:Class="ProjectHelper.NotePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectHelper"
+      mc:Ignorable="d" 
+      d:DesignHeight="422" d:DesignWidth="394"
+      Title="NotePage" KeyDown="NotePage_KeyDown">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <Label Content="Název poznámky"
+                   Style="{StaticResource HeaderLabel}"       
+            />
+                <TextBox x:Name="NoteNameBox"
+                     Margin="10"
+                     VerticalAlignment="Stretch"
+                     Height="22"
+                     Padding="3"
+                     TextChanged="NoteNameBox_TextChanged"
+                     AcceptsReturn="False"
+                     AcceptsTab="False"
+            />
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Label Content="Podsložka"
+                       Style="{StaticResource HeaderLabel}"
+                />
+                <ComboBox x:Name="SubfolderBox"
+                          Margin="10"
+                          VerticalAlignment="Stretch"
+                          DropDownOpened="SubfolderBox_DropDownOpened"
+                />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Height="55"
+                  VerticalAlignment="Top" 
+                  HorizontalAlignment="Stretch"
+            >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Text poznámky"
+                       Style="{StaticResource HeaderLabel}"
+                />
+                <StackPanel Grid.Column="1"
+                            FlowDirection="RightToLeft"
+                            Orientation="Horizontal"
+                >
+                    <Button x:Name="DeleteButton"
+                            Width="25"
+                            Height="25"
+                            ToolTip="Smazat poznámku"
+                            Click="DeleteNoteButton_Click"
+                            IsTabStop="False"
+                    >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="UI/Buttons/DockPanel (25x25)/deleteButton.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="SaveButton"
+                            Width="25"
+                            Height="25"
+                            ToolTip="Uložit poznámku"
+                            Click="SaveButton_Click"
+                            IsTabStop="False"
+                    >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="UI\Buttons\DockPanel (25x25)\saveButton.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="SaveButtonInactive"
+                            Width="25"
+                            Height="25"
+                            Visibility="Collapsed"
+                            IsTabStop="False"
+                    >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="UI\Buttons\DockPanel (25x25)\saveButtonInactive.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <local:EditorRTF x:Name="NoteText" Margin="10,55,10,10"/>
+        </Grid>
+    </Grid>
+</Page>

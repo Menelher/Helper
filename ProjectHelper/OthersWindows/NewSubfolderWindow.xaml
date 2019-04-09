@@ -1,0 +1,45 @@
+﻿<Window x:Class="ProjectHelper.NewSubfolderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectHelper"
+        mc:Ignorable="d"
+        Title="Nová podsložka" Height="152.5" Width="300">
+    <Grid>
+        <Label Content="Název podsložky"
+               Margin="10,10,0,0"
+               />
+        <TextBox x:Name="SubfolderName"
+                 Margin="10,35,10,0" 
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Top" 
+                 AcceptsReturn="False"
+                 />
+        <StackPanel Margin="10,0,10,10" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Stretch">
+            <DockPanel VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       >
+                <Button x:Name="CreateButton"
+                        Content="Vytvořit"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Center"
+                        Width="75" 
+                        Click="CreateButton_Click"
+                        IsDefault="True"
+                        />
+                <Button x:Name="StronoButton"
+                        Content="Zrušit" 
+                        Margin="10,0,0,0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center" 
+                        Width="75" 
+                        Click="StronoButton_Click"
+                        IsCancel="True"
+                        />
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

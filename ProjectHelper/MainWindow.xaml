@@ -1,0 +1,16 @@
+﻿<Window x:Name="window" x:Class="ProjectHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectHelper"
+        mc:Ignorable="d"
+        Title="Helper" Height="631" Width="408" MinWidth="408"
+        Closed="Window_Closed"
+        LocationChanged="Window_LocationChanged"
+        >
+
+    <Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

@@ -1,0 +1,99 @@
+﻿<Page x:Class="ProjectHelper.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectHelper"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="400"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid Style="{StaticResource HeaderGrid}">
+            <Label Content="Helper"
+               x:Name="label"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="50"
+        />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        Width="100" 
+                        Height="125"
+                        Cursor="Hand"
+                        ToolTip="Projekty"
+                        MouseLeftButtonDown="ProjectsButton_Click"
+            >
+                <Button x:Name="ProjectsButton"
+                Width="100"
+                Height="100" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                Click="ProjectsButton_Click"
+            >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="UI\Buttons\MainPage Buttons (100x100)\projectsButton.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label Content="Projekty"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="Bold"
+                />
+            </StackPanel>
+            <!--<StackPanel Grid.Column="1"
+                        Width="100" 
+                        Height="125"
+                        Cursor="Hand"
+                        ToolTip="Sešit"
+                        MouseLeftButtonDown="ProjectsButton_Click"
+            >
+                <Button x:Name="NotebookButton"
+                Width="100"
+                Height="100" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                Click="ProjectsButton_Click"
+            >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="UI\Buttons\MainPage Buttons (100x100)\notebookButton.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label Content="Sešit"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="18"
+                       FontWeight="Bold"
+                />
+            </StackPanel>-->
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Page>

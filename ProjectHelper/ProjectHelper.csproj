@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C0A8585-6D10-47ED-A750-E5DF17E7541A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjectHelper</RootNamespace>
+    <AssemblyName>Helper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>UI\appIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\ProjectStopWatch.cs" />
+    <Compile Include="Classes\Default.cs" />
+    <Compile Include="OthersWindows\ProjectSettingsWindow.xaml.cs">
+      <DependentUpon>ProjectSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ProjectInfo.cs" />
+    <Compile Include="ProjectTab.xaml.cs">
+      <DependentUpon>ProjectTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditorRTF.xaml.cs">
+      <DependentUpon>EditorRTF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OthersWindows\NewSubfolderWindow.xaml.cs">
+      <DependentUpon>NewSubfolderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OthersWindows\RenameProjectWindow.xaml.cs">
+      <DependentUpon>RenameProjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Tags.cs" />
+    <Compile Include="ProjectListPage.xaml.cs">
+      <DependentUpon>ProjectListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoPage.xaml.cs">
+      <DependentUpon>ToDoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ToDoItem.xaml.cs">
+      <DependentUpon>ToDoItem.xaml</DependentUpon>
+    </Compile>
+    <Page Include="OthersWindows\ProjectSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditorRTF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OthersWindows\NewProjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OthersWindows\NewSubfolderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OthersWindows\RenameProjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToDoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ToDoItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OthersWindows\NewProjectWindow.xaml.cs">
+      <DependentUpon>NewProjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotePage.xaml.cs">
+      <DependentUpon>NotePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectPage.xaml.cs">
+      <DependentUpon>ProjectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\appIcon.ico" />
+    <Resource Include="UI\Buttons\Context Menu %2820x20%29\copyIcon.png" />
+    <Resource Include="UI\Buttons\Context Menu %2820x20%29\deleteIcon.png" />
+    <Resource Include="UI\Buttons\Context Menu %2820x20%29\NewButtons %2820x20%29\newNote.png" />
+    <Resource Include="UI\Buttons\Context Menu %2820x20%29\NewButtons %2820x20%29\newSubfolder.png" />
+    <Resource Include="UI\Buttons\Context Menu %2820x20%29\NewButtons %2820x20%29\newTodo.png" />
+    <Resource Include="UI\Buttons\Context Menu %2820x20%29\renameIcon.png" />
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\deleteButton.png" />
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\newNoteButton.png" />
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\newSubfolderButton.png" />
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\newTodoButton.png" />
+    <Resource Include="UI\Buttons\MainPage Buttons %28100x100%29\projectsButton.png" />
+    <Resource Include="UI\Placeholders\100x100.png" />
+    <Resource Include="UI\Placeholders\50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Placeholders\25x25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\saveButton.png" />
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\saveButtonInactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\backButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Buttons\DockPanel %2825x25%29\addButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Buttons\TextEditor %2825x25%29\centerAlignment.png" />
+    <Resource Include="UI\Buttons\TextEditor %2825x25%29\justifeAlignment.png" />
+    <Resource Include="UI\Buttons\TextEditor %2825x25%29\leftAlignment.png" />
+    <Resource Include="UI\Buttons\TextEditor %2825x25%29\rightAlignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Buttons\MainPage Buttons %28100x100%29\notebookButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Buttons\TabItem %2815x15%29\closeButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

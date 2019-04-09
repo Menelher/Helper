@@ -1,0 +1,116 @@
+﻿<Page x:Class="ProjectHelper.ProjectListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectHelper"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="400"
+      Title="ProjectListPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid Style="{StaticResource HeaderGrid}">
+            <Label Content="Projekty"
+               Grid.Row="0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontSize="50"
+            />
+            <Button x:Name="BackButton"
+                    Width="25"
+                    Height="25"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="10,10,0,0"
+                    ToolTip="Zpět"
+                    IsCancel="True"
+                    Click="BackButton_Click"
+            >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="UI\Buttons\DockPanel (25x25)\backButton.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal"
+                        Height="40"
+                        Margin="10,10"
+                        VerticalAlignment="Top">
+                <Button x:Name="NewProjectButton"
+                        Width="25"
+                        Height="25"
+                        ToolTip="Vytvoří nový projekt"
+                        Click="NewProject_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="UI\Buttons\DockPanel (25x25)\addButton.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="RenameProjectButton"
+                        Width="25"
+                        Height="25"
+                        ToolTip="Přejmenuje vybraný projekt"
+                        Click="RenameProjectItem_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="UI\Buttons\Context Menu (20x20)\renameIcon.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="DeleteProjectButton"
+                        Width="25"
+                        Height="25"
+                        ToolTip="Smaže vybraný projekt"
+                        Click="DeleteProjectItem_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="UI\Buttons\DockPanel (25x25)\deleteButton.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <ListView x:Name="ProjectList"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     Margin="10,50,10,10"
+                     MouseDoubleClick="ProjectList_MouseDoubleClick"
+                     KeyDown="ProjectList_KeyDown"
+                     FontSize="25"
+                     Background="Transparent"
+                     >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn x:Name="NameColumn"
+                                        Header="Název"
+                                        DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn x:Name="DateColumn"
+                                        Header="Vytvořen"
+                                        DisplayMemberBinding="{Binding Date}"/>
+                    </GridView>
+                </ListView.View>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="NewProjectItem" Header="Nový" Click="NewProject_Click"/>
+                        <MenuItem x:Name="RenameProjectItem" Header="Přejmenovat" Click="RenameProjectItem_Click">
+                            <MenuItem.Icon>
+                                <Image Source="UI\Buttons\Context Menu (20x20)\renameIcon.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="DeleteProjectItem" Header="Smazat" Click="DeleteProjectItem_Click">
+                            <MenuItem.Icon>
+                                <Image Source="UI\Buttons\Context Menu (20x20)\deleteIcon.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

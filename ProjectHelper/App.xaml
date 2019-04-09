@@ -1,0 +1,130 @@
+﻿<Application x:Class="ProjectHelper.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProjectHelper"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="DefaultStyle" TargetType="{x:Type Control}">
+            <Setter Property="FontFamily" Value="Century Gothic"/>
+            <Setter Property="Foreground" Value="#212121"/>
+        </Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource DefaultStyle}"/>
+        <Style TargetType="{x:Type Label}" x:Key="HeaderLabel" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10, 10, 0, 0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Background" Value="#f0f0f0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CaretBrush" Value="#212121"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="AcceptsTab" Value="True"/>
+            <Setter Property="Padding" Value="3"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="HeaderTextBox" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="SelectionBrush" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CaretBrush" Value="#212121"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="AcceptsReturn" Value="False"/>
+        </Style>
+        <Style TargetType="{x:Type RichTextBox}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#f0f0f0"/>
+            <Setter Property="CaretBrush" Value="#212121"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="AcceptsTab" Value="True"/>
+            <Setter Property="Padding" Value="50"/>
+        </Style>
+        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="BorderBrush" Value="#9a9a9a"/>
+        </Style>
+        <Style TargetType="{x:Type ListBox}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="#f0f0f0"/>
+        </Style>
+        <Style TargetType="GridViewColumnHeader" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style TargetType="ListViewItem" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="{x:Type TreeView}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="#f0f0f0"/>
+        </Style>
+        <Style TargetType="{x:Type ComboBoxItem}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#f0f0f0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Margin" Value="2.5,0"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="EditorButton" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Margin" Value="2.5,0"/>
+        </Style>
+        <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#f0f0f0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Margin" Value="2.5,0"/>
+        </Style>
+        <Style TargetType="{x:Type ToggleButton}" x:Key="EditorToggleButton" BasedOn="{StaticResource DefaultStyle}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style TargetType="{x:Type Grid}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="{x:Type Grid}" x:Key="HeaderGrid">
+            <Setter Property="Background" Value="#2F6DAC"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="{x:Type MenuItem}">
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource DefaultStyle}">
+            
+        </Style>
+    </Application.Resources>
+</Application>
