@@ -107,7 +107,7 @@
                                 Width="25"
                                 Height="25"
                                 Margin="2.5,0"
-                                Content="."
+                                Content="•"
                                 ToolTip="Zarážky"
                                 Click="BulletButton_Click"
                                 Background="Transparent"
@@ -130,37 +130,41 @@
                                       Width="25"
                                       Height="25"
                                       Margin="2.5,0"
-                                      Content="L"
                                       ToolTip="Zarovnat vlevo"
                                       Click="AlignLeftButton_Click"
-                                      IsTabStop="False"/>
+                                      IsTabStop="False">
+                            <Image Source="/UI/Buttons/TextEditor (25x25)/leftAlignment.png"/>
+                        </ToggleButton>
                         <ToggleButton x:Name="AlignCenterButton"
                                       Style="{StaticResource EditorToggleButton}"
                                       Width="25"
                                       Height="25"
                                       Margin="2.5,0"
-                                      Content="C"
                                       ToolTip="Zarovnat na střed"
                                       Click="AlignCenterButton_Click"
-                                      IsTabStop="False"/>
+                                      IsTabStop="False">
+                            <Image Source="/UI/Buttons/TextEditor (25x25)/centerAlignment.png"/>
+                        </ToggleButton>
                         <ToggleButton x:Name="AlignRightButton"
                                       Style="{StaticResource EditorToggleButton}"
                                       Width="25"
                                       Height="25"
                                       Margin="2.5,0"
-                                      Content="R"
                                       ToolTip="Zarovnat vpravo"
                                       Click="AlignRightButton_Click"
-                                      IsTabStop="False"/>
+                                      IsTabStop="False">
+                            <Image Source="/UI/Buttons/TextEditor (25x25)/rightAlignment.png"/>
+                        </ToggleButton>
                         <ToggleButton x:Name="AlignJustifyButton"
                                       Style="{StaticResource EditorToggleButton}"
                                       Width="25"
                                       Height="25"
                                       Margin="2.5,0"
-                                      Content="J"
                                       ToolTip="Zarovna do bloku"
                                       Click="AlignJustifyButton_Click"
-                                      IsTabStop="False"/>
+                                      IsTabStop="False">
+                            <Image Source="/UI/Buttons/TextEditor (25x25)/justifeAlignment.png"/>
+                        </ToggleButton>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
