@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:ProjectHelper"
       mc:Ignorable="d" 
       d:DesignHeight="422" d:DesignWidth="394"
-      Title="ProjectTab">
+      Title="ProjectTab"
+      KeyDown="Page_KeyDown">
 
     <Grid Grid.Row="1"
         >

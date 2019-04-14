@@ -37,17 +37,7 @@ namespace ProjectHelper
                 //Pokud projekt obsahuje název uloží ho
                 if (string.IsNullOrEmpty(ProjectName.Text) == false)
                 {
-                    if (string.IsNullOrEmpty(ProjectDescription.Text) == false)
-                    {
-                        SaveProject();
-                    }
-                    else
-                    {
-                        if (MessageBox.Show("Nebyl zadán popis, chcete pokračovat", "Chybějící popis", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
-                        {
-                            SaveProject();   
-                        }
-                    }
+                    SaveProject();
                 }
                 else
                 {

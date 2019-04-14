@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProjectHelper.NewThingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectHelper"
+        mc:Ignorable="d"
+        Title="NewThingWindow" Height="150" Width="400"
+        Closed="Window_Closed">
+    <Grid>
+        <Label Content="Nová položka"
+               Margin="10"/>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+            <Button x:Name="NewNoteButton"
+                    Content="Nová poznámka"
+                    Width="110"
+                    Click="NewNoteButton_Click"/>
+            <Button x:Name="NewTodoButton"
+                    Content="Nový ToDo List"
+                    Width="110"
+                    Click="NewTodoButton_Click"/>
+            <Button x:Name="NewSubfolder"
+                    Content="Nový subfolder"
+                    Width="110"
+                    Click="NewSubfolder_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

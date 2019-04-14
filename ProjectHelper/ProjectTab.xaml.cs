@@ -37,6 +37,7 @@ namespace ProjectHelper
         Default @default = new Default();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         ProjectStopWatch stopWatch;
+        public string newThingType;
 
         //Hlavní metoda
         public ProjectTab(string project, ProjectPage mainPage)
@@ -260,6 +261,42 @@ namespace ProjectHelper
         {
             Button button = (Button)sender;
             projectPage.CloseTabItem(button.Tag.ToString());
+        }
+
+        //Nová věc pomocí CTRL+N
+        private void Page_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.N && (Keyboard.Modifiers == ModifierKeys.Control))
+            {
+                NewThingWindow newThingWindow = new NewThingWindow(this);
+                newThingWindow.Owner = Application.Current.MainWindow;
+                newThingWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                newThingWindow.Closed += new EventHandler(NewThingWindowClosed);
+                newThingWindow.Show();
+            }
+        }
+
+        //Event handler pro zavření okna NewThingWindow
+        private void NewThingWindowClosed(object sender, EventArgs e)
+        {
+            switch(newThingType)
+            {
+                case "Note":
+                    NewNote();
+                    break;
+
+                case "Todo":
+                    NewTodo();
+                    break;
+
+                case "Subfolder":
+                    NewSubfolder();
+                    break;
+
+                default:
+                    break;
+
+            }
         }
 
         ///METODY - NOTELIST///
