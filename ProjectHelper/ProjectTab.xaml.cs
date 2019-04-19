@@ -1,22 +1,14 @@
-﻿using System;
+﻿using ProjectHelper.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Diagnostics;
-using ProjectHelper.Classes;
-using System.Reflection;
 
 namespace ProjectHelper
 {
@@ -87,13 +79,6 @@ namespace ProjectHelper
 
         ///METODY - OBECNÉ///
 
-        //Metoda pro návrat na MainPage
-        private void Back()
-        {
-            StopWatchStop();
-            NavigationService.Navigate(new ProjectListPage());
-        }
-
         //Metoda pro vrací Parent TreeViewItemu
         public TreeViewItem ReturnParent(TreeViewItem child)
         {
@@ -104,7 +89,7 @@ namespace ProjectHelper
                 while ((parent as TreeViewItem) == null)
                     parent = VisualTreeHelper.GetParent(parent);
 
-                    return parent as TreeViewItem;
+                return parent as TreeViewItem;
             }
             catch
             {
@@ -175,12 +160,14 @@ namespace ProjectHelper
 
         }
 
+        //Metoda pro vypnutí počítání času projektu
         public void StopWatchStop()
         {
             dispatcherTimer.Stop();
             stopWatch.StopStopWatch();
         }
 
+        //Metoda pro zapnutí počítání času projektu
         public void StartWatchStop()
         {
             dispatcherTimer.Start();
@@ -279,7 +266,7 @@ namespace ProjectHelper
         //Event handler pro zavření okna NewThingWindow
         private void NewThingWindowClosed(object sender, EventArgs e)
         {
-            switch(newThingType)
+            switch (newThingType)
             {
                 case "Note":
                     NewNote();
@@ -454,7 +441,7 @@ namespace ProjectHelper
                         }
                         //Parent neexistuje
                         else
-                        {                           
+                        {
                             NewTab(noteName, null, tags.type);
                         }
                         break;
@@ -465,7 +452,7 @@ namespace ProjectHelper
                             selected.IsExpanded = false;
                         else
                             selected.IsExpanded = true;
-                            break;
+                        break;
                 }
             }
         }
@@ -477,7 +464,7 @@ namespace ProjectHelper
             int randomID = 0;
             do
             {
-                randomID = random.Next(0,1001);
+                randomID = random.Next(0, 1001);
             } while (tabName.Contains(randomID.ToString()));
 
             //Základní nastavení tabitemu
@@ -558,8 +545,8 @@ namespace ProjectHelper
 
                 if (parent != null)
                     subfolderTags = parent.Tag as Tags;
-            else
-                subfolderTags = treeViewItem.Tag as Tags;
+                else
+                    subfolderTags = treeViewItem.Tag as Tags;
 
                 NewTab(null, subfolderTags.name, "Note");
             }
@@ -628,7 +615,7 @@ namespace ProjectHelper
                     else
                     {
                         string subfolderName = subfolderTags.name;
-                            File.Delete(System.IO.Path.Combine(appPath, "Projekty", projectName, "Poznámky", subfolderName, "Notes", noteName + ".rtf"));
+                        File.Delete(System.IO.Path.Combine(appPath, "Projekty", projectName, "Poznámky", subfolderName, "Notes", noteName + ".rtf"));
                     }
                 }
                 //Todo list
@@ -644,7 +631,7 @@ namespace ProjectHelper
                 }
                 //Subfolder
                 else
-                     Directory.Delete(System.IO.Path.Combine(appPath, "Projekty", projectName, "Poznámky", noteName), true);
+                    Directory.Delete(System.IO.Path.Combine(appPath, "Projekty", projectName, "Poznámky", noteName), true);
 
                 LoadNotes();
             }
@@ -924,7 +911,7 @@ namespace ProjectHelper
             try
             {
                 errorType = "NewNote";
-                NewNote();                
+                NewNote();
             }
             catch
             {
