@@ -181,9 +181,10 @@ namespace ProjectHelper
             OpenProject();
         }
 
-        //Otevření projektu pomocí enteru
+        //Klávesové zkratky
         private void ProjectList_KeyDown(object sender, KeyEventArgs e)
         {
+            //Otevření projektu
             if (e.Key == Key.Enter)
             {
                 try
@@ -194,6 +195,17 @@ namespace ProjectHelper
                 {
                     Error();
                 }
+            }
+
+            //Vymazání projektu
+            if (e.Key == Key.Delete)
+            {
+                try
+                {
+                    DeleteProject();
+                }
+                catch
+                { Error(); }
             }
         }
 
