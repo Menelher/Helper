@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjectHelper"
              mc:Ignorable="d" 
-             MinWidth="360">
+             MinWidth="360"
+             KeyDown="UserControl_KeyDown">
     <Grid MinWidth="360">
         <DockPanel>
             <StackPanel Name="ToolBar"

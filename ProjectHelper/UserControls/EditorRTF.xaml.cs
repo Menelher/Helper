@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using MessageBox = System.Windows.MessageBox;
 using System.IO;
+using System.Windows.Threading;
 
 namespace ProjectHelper
 {
@@ -24,6 +25,8 @@ namespace ProjectHelper
     public partial class EditorRTF : System.Windows.Controls.UserControl
     {
         ColorDialog colorDialog;
+        DispatcherTimer dispatcherTimer;
+        double scrollSpeed = 10;
 
         public EditorRTF()
         {
@@ -49,6 +52,10 @@ namespace ProjectHelper
                 FullOpen = true,
                 CustomColors = customColors
             };
+
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
         }
 
         //změna fontu  
@@ -232,6 +239,40 @@ namespace ProjectHelper
         private void TextEditor_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        //Metoda pro automatický posun textového editoru
+        private void AutoScroll()
+        {
+            TextEditor.ScrollToVerticalOffset(TextEditor.VerticalOffset + scrollSpeed);
+        }
+
+        private void UserControl_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            //Spouští autoscroll a upravuje jeho rychlost
+            if (e.Key == Key.Add && (Keyboard.Modifiers == ModifierKeys.Control))
+            {
+                if (dispatcherTimer.IsEnabled == false)
+                {
+                    dispatcherTimer.Start();
+                    AutoScroll();
+                }
+                else
+                    scrollSpeed += 10;
+            }
+
+            if (e.Key == Key.Subtract)
+            {
+                if (scrollSpeed >= 10)
+                    scrollSpeed -= 10;
+                else
+                    dispatcherTimer.Stop();
+            }
+        }
+
+        private void DispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            AutoScroll();
         }
     }
 }
