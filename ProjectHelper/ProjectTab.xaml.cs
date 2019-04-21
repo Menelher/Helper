@@ -497,6 +497,7 @@ namespace ProjectHelper
                 Height = 15,
                 VerticalAlignment = VerticalAlignment.Center,
                 Tag = tabItem.Name.ToString(),
+                Background = new SolidColorBrush(Color.FromArgb(0,240, 240, 240)),
                 Content = new Image
                 {
                     Source = new BitmapImage(new Uri(@"UI\Buttons\TabItem (15x15)\closeButton.png", UriKind.RelativeOrAbsolute))

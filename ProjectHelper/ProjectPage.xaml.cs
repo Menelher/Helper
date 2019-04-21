@@ -218,6 +218,7 @@ namespace ProjectHelper
                 Width = 15,
                 Height = 15,
                 VerticalAlignment = VerticalAlignment.Center,
+                Background = new SolidColorBrush(Color.FromArgb(0, 240, 240, 240)),                
                 Tag = tabItem.Name,
 
                 Content = new Image
