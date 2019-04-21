@@ -158,6 +158,7 @@ namespace ProjectHelper
             else
                 Toolbar.Visibility = Visibility.Hidden;
 
+            projectPage.Header.Background = new BrushConverter().ConvertFromString(GetSettings("ProjectColor")) as SolidColorBrush;
         }
 
         //Metoda pro vypnutí počítání času projektu
